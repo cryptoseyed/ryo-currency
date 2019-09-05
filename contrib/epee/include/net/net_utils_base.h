@@ -295,6 +295,19 @@ struct connection_context_base
 	{
 	}
 
+	connection_context_base(const connection_context_base &a) : m_connection_id{a.m_connection_id},
+																m_remote_address{a.m_remote_address},
+																m_is_income{a.m_is_income},
+																m_started{a.m_started},
+																m_last_recv{a.m_last_recv},
+																m_last_send{a.m_last_send},
+																m_recv_cnt{a.m_recv_cnt},
+																m_send_cnt{a.m_send_cnt},
+																m_current_speed_down{a.m_current_speed_down},
+																m_current_speed_up{a.m_current_speed_up}
+	{
+	}
+
 	connection_context_base &operator=(const connection_context_base &a)
 	{
 		set_details(a.m_connection_id, a.m_remote_address, a.m_is_income);
